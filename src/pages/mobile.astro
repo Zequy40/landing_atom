@@ -1,0 +1,755 @@
+---
+// src/pages/mobile.astro
+const title = "AtomDigital - Automatización para Clínicas Dentales";
+const description = "Convertimos tu clínica dental en una máquina de ventas automatizada.";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content={description}>
+    <meta name="theme-color" content="#8900B0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <img src="/atom-logo-dark.png" alt="AtomDigital" class="header-logo" />
+        <a href="#contact" class="header-cta">Contactar</a>
+    </header>
+
+    <!-- Hero Card -->
+    <section class="hero-card">
+        <div class="hero-badge">🚀 Sistema Completo</div>
+        <h1>Automatiza tu clínica dental</h1>
+        <p class="hero-subtitle">
+            Sistema de IA que convierte leads en pacientes automáticamente
+        </p>
+        
+        <div class="hero-image-placeholder">
+            <div class="placeholder-content">
+                <span class="placeholder-icon">📱</span>
+                <p>Tu ilustración aquí</p>
+            </div>
+        </div>
+
+        <a href="#package" class="primary-button">
+            <span>Ver el sistema</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stat-item">
+            <div class="stat-number">+65%</div>
+            <div class="stat-label">Más citas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">-80%</div>
+            <div class="stat-label">Menos tiempo</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Atención</div>
+        </div>
+    </section>
+
+    <!-- Features List -->
+    <section class="features-section">
+        <h2>Todo incluido</h2>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <div class="feature-content">
+                <h3>Setter IA</h3>
+                <p>Responde y agenda automáticamente 24/7</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <div class="feature-content">
+                <h3>Landing profesional</h3>
+                <p>Optimizada para conversión</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <div class="feature-content">
+                <h3>WhatsApp integrado</h3>
+                <p>Respuestas inteligentes automáticas</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <div class="feature-content">
+                <h3>Panel de control</h3>
+                <p>Estadísticas en tiempo real</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <div class="feature-content">
+                <h3>Seguimiento automático</h3>
+                <p>Nunca pierdas un paciente</p>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <div class="feature-content">
+                <h3>Mantenimiento</h3>
+                <p>Actualizaciones incluidas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Accordion -->
+    <section class="problems-section">
+        <h2>¿Te suena familiar?</h2>
+        <p class="section-subtitle">Estos problemas te están costando dinero cada día</p>
+
+        <div class="problems-grid">
+            {[
+                { icon: "💸", title: "Pérdida de dinero", desc: "Leads que no conviertes" },
+                { icon: "📵", title: "No contestan", desc: "Llamadas sin respuesta" },
+                { icon: "❌", title: "Citas perdidas", desc: "No se presentan" },
+                { icon: "🚪", title: "Ventas perdidas", desc: "Pacientes que desaparecen" },
+                { icon: "⏰", title: "Pérdida de tiempo", desc: "Seguimiento manual" },
+                { icon: "📱", title: "WhatsApp saturado", desc: "Cientos sin responder" },
+                { icon: "😰", title: "Equipo desbordado", desc: "Personal colapsado" },
+                { icon: "🎯", title: "Sin control", desc: "No sabes qué pasa" },
+                { icon: "📊", title: "Sin seguimiento", desc: "Pacientes olvidados" },
+                { icon: "⚡", title: "Muy lento", desc: "Competencia te gana" }
+            ].map(problem => (
+                <div class="problem-chip">
+                    <span class="problem-icon">{problem.icon}</span>
+                    <div class="problem-text">
+                        <strong>{problem.title}</strong>
+                        <small>{problem.desc}</small>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Illustration Section -->
+    <section class="illustration-section">
+        <div class="illustration-placeholder">
+            <div class="placeholder-content">
+                <span class="placeholder-icon">💻</span>
+                <p>Dashboard / Sistema</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Card -->
+    <section class="package-section" id="package">
+        <div class="package-card">
+            <div class="package-badge">Oferta de lanzamiento</div>
+            <h2>Paquete Premium</h2>
+            
+            <div class="price-tag">
+                <span class="price-amount">1.050€</span>
+                <span class="price-label">Pago único</span>
+            </div>
+
+            <ul class="package-list">
+                <li>✓ Landing profesional optimizada</li>
+                <li>✓ Setter IA 24/7</li>
+                <li>✓ WhatsApp Business integrado</li>
+                <li>✓ Sistema de agendamiento</li>
+                <li>✓ Panel de control en tiempo real</li>
+                <li>✓ Seguimiento automático</li>
+                <li>✓ Mantenimiento incluido</li>
+                <li>✓ Soporte prioritario</li>
+                <li>✓ Actualizaciones continuas</li>
+            </ul>
+
+            <a href="#contact" class="primary-button">
+                <span>Quiero mi sistema</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>¿Listo para transformar tu clínica?</h2>
+        <p>Hablemos de cómo implementar tu sistema en menos de 7 días</p>
+        
+        <a href="mailto:contacto@atomdigital.com" class="secondary-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Enviar email</span>
+        </a>
+
+        <a href="https://wa.me/34YOUR_PHONE_NUMBER?text=Hola!%20Quiero%20información%20sobre%20el%20paquete%20de%20automatización" class="whatsapp-button-large">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>WhatsApp</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mobile-footer">
+        <img src="/atom-logo-dark.png" alt="AtomDigital" class="footer-logo" />
+        <p>Especialistas en automatización<br>para clínicas dentales</p>
+        <p class="copyright">© 2026 AtomDigital</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34YOUR_PHONE_NUMBER?text=Hola!%20Quiero%20información%20sobre%20el%20paquete" 
+       class="floating-whatsapp" 
+       aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+        --primary: #0A0A14;
+        --secondary: #1A1A2E;
+        --card: #16162A;
+        --accent: #8900B0;
+        --accent-light: #A740D0;
+        --text: #FFFFFF;
+        --text-secondary: #B8B8C8;
+        --border: rgba(137, 0, 176, 0.2);
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--primary);
+        color: var(--text);
+        line-height: 1.6;
+        padding-bottom: 80px;
+        overflow-x: hidden;
+    }
+
+    /* Mobile Header */
+    .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(10, 10, 20, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .header-logo {
+        width: 40px;
+        height: 40px;
+        filter: brightness(1.2) drop-shadow(0 0 8px rgba(137, 0, 176, 0.4));
+    }
+
+    .header-cta {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 0.6rem 1.5rem;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 0 20px rgba(137, 0, 176, 0.4);
+    }
+
+    /* Hero Card */
+    .hero-card {
+        padding: 2rem 1.25rem;
+        text-align: center;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(137, 0, 176, 0.2);
+        border: 1px solid var(--border);
+        color: var(--accent-light);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #FFFFFF, var(--accent-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .hero-image-placeholder {
+        width: 100%;
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, var(--secondary), var(--card));
+        border-radius: 24px;
+        border: 2px solid var(--border);
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 40px rgba(137, 0, 176, 0.2);
+    }
+
+    .placeholder-content {
+        text-align: center;
+        color: var(--text-secondary);
+    }
+
+    .placeholder-icon {
+        font-size: 4rem;
+        display: block;
+        margin-bottom: 0.5rem;
+        filter: drop-shadow(0 0 10px rgba(137, 0, 176, 0.3));
+    }
+
+    .placeholder-content p {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    /* Buttons */
+    .primary-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        border: none;
+        box-shadow: 0 0 30px rgba(137, 0, 176, 0.4);
+        transition: transform 0.2s;
+    }
+
+    .primary-button:active {
+        transform: scale(0.98);
+    }
+
+    .secondary-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.2s;
+    }
+
+    .secondary-button:active {
+        transform: scale(0.98);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Stats Section */
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 0 1.25rem 2rem;
+    }
+
+    .stat-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--accent-light);
+        text-shadow: 0 0 20px rgba(137, 0, 176, 0.5);
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+
+    /* Features Section */
+    .features-section {
+        padding: 3rem 1.25rem;
+    }
+
+    h2 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .feature-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        padding: 1.25rem;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 0 8px rgba(137, 0, 176, 0.3));
+    }
+
+    .feature-content h3 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .feature-content p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    /* Problems Section */
+    .problems-section {
+        padding: 3rem 1.25rem;
+        background: var(--card);
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .problems-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .problem-chip {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+    }
+
+    .problem-icon {
+        font-size: 1.75rem;
+        flex-shrink: 0;
+    }
+
+    .problem-text {
+        flex: 1;
+    }
+
+    .problem-text strong {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .problem-text small {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+
+    /* Illustration Section */
+    .illustration-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .illustration-placeholder {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: linear-gradient(135deg, var(--secondary), var(--card));
+        border-radius: 20px;
+        border: 2px dashed var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Package Section */
+    .package-section {
+        padding: 3rem 1.25rem;
+        background: var(--card);
+    }
+
+    .package-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid var(--border);
+        border-radius: 24px;
+        padding: 2rem 1.5rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 40px rgba(137, 0, 176, 0.2);
+    }
+
+    .package-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 20px rgba(137, 0, 176, 0.4);
+    }
+
+    .package-card h2 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .price-tag {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .price-amount {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent-light);
+        text-shadow: 0 0 30px rgba(137, 0, 176, 0.6);
+        line-height: 1;
+    }
+
+    .price-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .package-list {
+        list-style: none;
+        margin-bottom: 2rem;
+    }
+
+    .package-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.95rem;
+        color: var(--text);
+    }
+
+    .package-list li:last-child {
+        border-bottom: none;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 3rem 1.25rem;
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-section > p {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+    }
+
+    .whatsapp-button-large {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background: #25D366;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
+        transition: transform 0.2s;
+    }
+
+    .whatsapp-button-large:active {
+        transform: scale(0.98);
+    }
+
+    /* Footer */
+    .mobile-footer {
+        text-align: center;
+        padding: 2rem 1.25rem;
+        border-top: 1px solid var(--border);
+        background: var(--card);
+    }
+
+    .footer-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+        filter: brightness(1.2);
+    }
+
+    .mobile-footer p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .copyright {
+        margin-top: 1rem;
+        font-size: 0.8rem !important;
+        opacity: 0.6;
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        z-index: 1000;
+        color: white;
+        animation: pulse 2s infinite;
+    }
+
+    .floating-whatsapp svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        }
+        50% {
+            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8), 0 0 0 8px rgba(37, 211, 102, 0.1);
+        }
+    }
+
+    /* Smooth animations */
+    .hero-card, .stats-section, .feature-card, .problem-chip {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Smooth scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = anchor.getAttribute('href');
+            if (href) {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+if (!/Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    if (window.innerWidth >= 768) {
+      window.location.replace('/');
+    }
+  }
+
+</script>

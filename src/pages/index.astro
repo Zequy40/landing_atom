@@ -230,7 +230,9 @@ const description = "Convertimos tu clínica dental en una máquina de ventas au
         </div>
     </footer>
 </body>
+
 </html>
+
 
 <style>
     * {
@@ -1246,4 +1248,11 @@ const description = "Convertimos tu clínica dental en una máquina de ventas au
             observer.observe(el);
         });
     });
+
+if (/Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    if (window.innerWidth < 768) {
+      window.location.replace('/mobile');
+    }
+  }
 </script>
+
