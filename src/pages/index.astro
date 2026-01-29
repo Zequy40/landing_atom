@@ -1,11 +1,1249 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+const title = "AtomDigital - Automatización para Clínicas Dentales";
+const description = "Convertimos tu clínica dental en una máquina de ventas automatizada. Más citas, menos trabajo manual, cero oportunidades perdidas.";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="/atom-logo-dark.png" alt="AtomDigital" width="250" height="100" />
+            </div>
+            <h1>
+                Automatiza tu clínica y <span class="highlight">multiplica tus citas</span>
+            </h1>
+            <p class="subtitle">
+                Sistema completo de IA que convierte leads en pacientes automáticamente. 
+                Sin perder tiempo, sin saturar a tu equipo.
+            </p>
+            <a href="#package" class="cta-button">Conoce el sistema</a>
+        </div>
+        
+        <div class="hero-illustration">
+            <div class="phone-mockup-placeholder">
+                <!-- Aquí va tu imagen/ilustración de móvil 3D -->
+                <img src="/3D_phone.png" class="phone" alt="phone 3D">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features -->
+    <section class="quick-features">
+        <div class="features-wrapper">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Sistema Completo</h3>
+                <p>Landing + IA + Mantenimiento</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3>Respuesta Inmediata</h3>
+                <p>24/7 sin descanso</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Cero Oportunidades Perdidas</h3>
+                <p>Seguimiento automático</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <h2 class="section-title">¿Te suena familiar?</h2>
+        <p class="section-subtitle">Estos problemas están costándote miles de euros cada mes</p>
+        <div class="problems-grid">
+            {[
+                { icon: "💸", title: "Pérdida de dinero", description: "Cada lead que no conviertes es dinero directo que se evapora de tu clínica" },
+                { icon: "📵", title: "Leads que no contestan", description: "Te dejan el número pero nunca cogen el teléfono cuando los llamas" },
+                { icon: "❌", title: "Citas que no llegan", description: "Reservan cita pero el día señalado simplemente no aparecen" },
+                { icon: "🚪", title: "Ventas que se pierden", description: "Pacientes interesados que desaparecen sin cerrar el tratamiento" },
+                { icon: "⏰", title: "Pérdida de tiempo", description: "Tu equipo pierde horas siguiendo leads manualmente sin resultados" },
+                { icon: "📱", title: "WhatsApp saturado", description: "Cientos de mensajes sin responder que terminan en el olvido" },
+                { icon: "😰", title: "Equipo desbordado", description: "Recepcionistas colapsadas intentando atender todo al mismo tiempo" },
+                { icon: "🎯", title: "Pérdida de control", description: "No sabes qué está pasando con cada paciente en tiempo real" },
+                { icon: "📊", title: "Falta de seguimiento", description: "Imposible hacer seguimiento personalizado a cada paciente potencial" },
+                { icon: "⚡", title: "No llegan a tiempo", description: "Cuando respondes, el paciente ya ha contactado con tu competencia" },
+                { icon: "💔", title: "Oportunidades que se escapan", description: "Pacientes perfectos que nunca llegan a agendar por falta de rapidez" },
+                { icon: "🔄", title: "Sin embudo optimizado", description: "No tienes un sistema que convierta leads en pacientes de forma automática" }
+            ].map(problem => (
+                <div class="problem-card">
+                    <span class="problem-icon">{problem.icon}</span>
+                    <h3>{problem.title}</h3>
+                    <p>{problem.description}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="solution-content">
+            <div class="solution-text">
+                <h2>La solución que tu clínica dental necesita</h2>
+                <p>
+                    Imagina tener un asistente que nunca duerme, que responde al instante, 
+                    que agenda citas automáticamente y que nunca olvida hacer seguimiento.
+                </p>
+                <p>
+                    Eso es exactamente lo que hace nuestro sistema de automatización con IA.
+                </p>
+                <ul class="features-list">
+                    <li>Respuesta instantánea 24/7 a cada lead</li>
+                    <li>Setter IA que califica y agenda citas automáticamente</li>
+                    <li>Landing page profesional optimizada para conversión</li>
+                    <li>Seguimiento automático de cada paciente potencial</li>
+                    <li>WhatsApp integrado con respuestas inteligentes</li>
+                    <li>Panel de control para ver todo en tiempo real</li>
+                </ul>
+            </div>
+            <div class="solution-visual">
+                <div class="visual-decoration">
+                    <svg class="decoration-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8900B0;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#A740D0;stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="80" fill="url(#gradient1)" opacity="0.2"/>
+                        <circle cx="100" cy="100" r="60" fill="url(#gradient1)" opacity="0.3"/>
+                        <circle cx="100" cy="100" r="40" fill="url(#gradient1)" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <!-- Dental Illustration -->
+                <div class="illustration-placeholder">
+                  <img src="/autos.png" class="auto" alt="automatizaciones">
+                </div>
+
+                {[
+                    { number: "+65%", label: "Más citas confirmadas" },
+                    { number: "-80%", label: "Menos tiempo manual" },
+                    { number: "24/7", label: "Atención automatizada" }
+                ].map(stat => (
+                    <div class="stat-card">
+                        <div class="stat-number">{stat.number}</div>
+                        <div class="stat-label">{stat.label}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Section -->
+    <section class="package" id="package">
+        <div class="package-background-grid"></div>
+        <div class="package-container">
+            <h2 class="section-title">Tu Sistema Completo</h2>
+            <p class="section-subtitle">Todo lo que necesitas para automatizar tu clínica</p>
+            
+            <div class="package-card">
+                <span class="package-badge">OFERTA DE LANZAMIENTO</span>
+                <h3>Paquete Premium</h3>
+                <p class="package-description">
+                    Sistema completo de automatización y captación para tu clínica dental
+                </p>
+                
+                <ul class="package-includes">
+                    {[
+                        "Landing page profesional minimalista optimizada para conversión",
+                        "Setter IA con respuestas automáticas 24/7",
+                        "Sistema de agendamiento automatizado",
+                    ].map(item => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+                
+                <div class="package-price">
+                    <div class="price-amount">989€</div>
+                    <div class="price-period">Pago implementacion</div>
+                    
+                    
+                </div>
+                
+                <a href="#contact" class="cta-button">Quiero mi sistema ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <h2>¿Listo para transformar tu clínica?</h2>
+        <p>
+            Deja de perder pacientes y empieza a automatizar tu captación hoy mismo. 
+            Hablemos de cómo implementar tu sistema en menos de 7 días.
+        </p>
+        <a href="mailto:atomdigitalassistant@gmail.com" class="cta-button">Agenda una demo gratuita</a>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/34691143713?text=Hola!%20Quiero%20información%20sobre%20el%20paquete%20de%20automatización%20para%20mi%20clínica%20dental" 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/atom-logo-dark.png" alt="AtomDigital" width="50" height="50" />
+            </div>
+            <p class="footer-text">
+                Especialistas en automatización para clínicas dentales<br>
+                © 2026 AtomDigital. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #0A0A14;
+        --secondary: #1A1A2E;
+        --accent: #8900B0;
+        --accent-soft: #F3E5FF;
+        --accent-light: #A740D0;
+        --accent-glow: #B865D8;
+        --gray: #B8B8C8;
+        --light-gray: #E8E8E8;
+        --dark-card: #16162A;
+        --text-white: #FFFFFF;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--primary);
+        color: var(--text-white);
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        padding: 4rem 2rem;
+        background: var(--primary);
+        overflow: hidden;
+    }
+
+    /* Space/Stars background */
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(2px 2px at 20% 30%, white, transparent),
+            radial-gradient(2px 2px at 60% 70%, white, transparent),
+            radial-gradient(1px 1px at 50% 50%, white, transparent),
+            radial-gradient(1px 1px at 80% 10%, white, transparent),
+            radial-gradient(2px 2px at 90% 60%, white, transparent),
+            radial-gradient(1px 1px at 33% 80%, white, transparent),
+            radial-gradient(1px 1px at 15% 60%, white, transparent);
+        background-size: 200% 200%;
+        background-position: 0% 0%;
+        animation: stars 60s linear infinite;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    @keyframes stars {
+        from { background-position: 0% 0%; }
+        to { background-position: 100% 100%; }
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.3) 0%, transparent 70%);
+        top: 50%;
+        right: 20%;
+        transform: translate(50%, -50%);
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.5;
+        animation: glow 8s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+        0%, 100% { opacity: 0.5; transform: translate(50%, -50%) scale(1); }
+        50% { opacity: 0.8; transform: translate(50%, -50%) scale(1.1); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(30px, -30px) scale(1.1); }
+    }
+
+    .hero-content {
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-illustration {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .phone-mockup-placeholder {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 1/1;
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--dark-card) 100%);
+        border-radius: 30px;
+        border: 2px solid rgba(137, 0, 176, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+            0 0 60px rgba(137, 0, 176, 0.3),
+            0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: floatPhone 6s ease-in-out infinite;
+    }
+    .phone{
+      max-width: 130%;
+      object-fit: cover;
+    }
+    .auto{
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes floatPhone {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .phone-mockup-placeholder::before {
+        content: 'COLOCA TU IMAGEN AQUÍ';
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--gray);
+        text-align: center;
+        padding: 2rem;
+        font-family: 'IBM Plex Sans', sans-serif;
+        letter-spacing: 0.05em;
+    }
+
+    .phone-mockup-placeholder::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(137, 0, 176, 0.2), transparent);
+        animation: shine 3s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+        0% { left: -100%; }
+        50%, 100% { left: 100%; }
+    }
+
+    .logo {
+        margin-bottom: 3rem;
+        display: inline-block;
+        animation: fadeInDown 0.8s ease-out;
+    }
+
+    .logo img {
+        display: block;
+        filter: drop-shadow(0 4px 12px rgba(137, 0, 176, 0.4)) brightness(1.2);
+    }
+
+    h1 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+        text-align: left;
+    }
+
+    .highlight {
+        color: var(--accent-light);
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 0 30px rgba(137, 0, 176, 0.5);
+    }
+
+    .subtitle {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        color: var(--gray);
+        max-width: 500px;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        color: white;
+        padding: 1.1rem 2.8rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        cursor: pointer;
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+        box-shadow: 
+            0 0 30px rgba(137, 0, 176, 0.4),
+            0 10px 30px rgba(137, 0, 176, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+        left: 100%;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 0 40px rgba(137, 0, 176, 0.6),
+            0 15px 40px rgba(137, 0, 176, 0.4);
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        opacity: 0.6;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Quick Features Section */
+    .quick-features {
+        padding: 6rem 2rem;
+        background: var(--secondary);
+        border-bottom: 1px solid rgba(137, 0, 176, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quick-features::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.15) 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+    }
+
+    .features-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .feature-item {
+        text-align: center;
+        padding: 2.5rem;
+        transition: transform 0.3s ease;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        border: 1px solid rgba(137, 0, 176, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .feature-item:hover {
+        transform: translateY(-5px);
+        border-color: rgba(137, 0, 176, 0.5);
+        box-shadow: 0 0 30px rgba(137, 0, 176, 0.3);
+    }
+
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        background: linear-gradient(135deg, rgba(137, 0, 176, 0.2) 0%, rgba(167, 64, 208, 0.1) 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(137, 0, 176, 0.3);
+    }
+
+    .feature-item:hover .feature-icon {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(137, 0, 176, 0.5);
+    }
+
+    .feature-icon svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--accent-light);
+        transition: stroke 0.3s ease;
+    }
+
+    .feature-item:hover .feature-icon svg {
+        stroke: white;
+    }
+
+    .feature-item h3 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-white);
+    }
+
+    .feature-item p {
+        color: var(--gray);
+        font-size: 1rem;
+    }
+
+    /* Problems Section */
+    .problems {
+        padding: 8rem 2rem;
+        background: var(--dark-card);
+        color: var(--text-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .problems::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 20% 30%, rgba(137, 0, 176, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(137, 0, 176, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .problems::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(to top, rgba(137, 0, 176, 0.08), transparent);
+        pointer-events: none;
+    }
+
+    .section-title {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--gray);
+        max-width: 600px;
+        margin: 0 auto 5rem;
+        font-size: 1.2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .problems-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .problem-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(137, 0, 176, 0.2);
+        padding: 2rem;
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+    }
+
+    .problem-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(137, 0, 176, 0.5);
+        box-shadow: 0 0 30px rgba(137, 0, 176, 0.3);
+    }
+
+    .problem-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(137, 0, 176, 0.3));
+    }
+
+    .problem-card h3 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-white);
+    }
+
+    .problem-card p {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Animation classes */
+    .fade-in-observer {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .fade-in-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    /* Solution Section */
+    .solution {
+        padding: 8rem 2rem;
+        background: var(--primary);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .solution::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.2) 0%, transparent 70%);
+        filter: blur(80px);
+        pointer-events: none;
+    }
+
+    .solution::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.15) 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+    }
+
+    .solution-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+    }
+
+    .solution-text h2 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: var(--text-white);
+    }
+
+    .solution-text p {
+        color: var(--gray);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    .features-list {
+        list-style: none;
+        margin: 2rem 0;
+    }
+
+    .features-list li {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--text-white);
+    }
+
+    .features-list li::before {
+        content: '→';
+        color: var(--accent-light);
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-shadow: 0 0 10px rgba(137, 0, 176, 0.5);
+    }
+
+    .solution-visual {
+        background: linear-gradient(135deg, rgba(137, 0, 176, 0.1) 0%, rgba(22, 22, 42, 0.8) 100%);
+        border-radius: 30px;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        position: relative;
+        border: 1px solid rgba(137, 0, 176, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .visual-decoration {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 150px;
+        height: 150px;
+        opacity: 0.3;
+        pointer-events: none;
+        animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .decoration-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .illustration-placeholder {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--dark-card) 100%);
+        border-radius: 20px;
+        border: 2px dashed rgba(137, 0, 176, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 2rem;
+        font-family: 'IBM Plex Sans', sans-serif;
+        letter-spacing: 0.05em;
+        margin: 2rem 0;
+    }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(137, 0, 176, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        border-color: rgba(137, 0, 176, 0.5);
+        box-shadow: 0 0 30px rgba(137, 0, 176, 0.3);
+        transform: translateY(-5px);
+    }
+
+    .stat-number {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent-light);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 20px rgba(137, 0, 176, 0.5);
+    }
+
+    .stat-label {
+        font-size: 1rem;
+        color: var(--gray);
+    }
+
+    /* Package Section */
+    .package {
+        padding: 8rem 2rem;
+        background: var(--dark-card);
+        color: var(--text-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .package::before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.3) 0%, transparent 70%);
+        filter: blur(60px);
+        animation: glow 8s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .package::after {
+        content: '';
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.2) 0%, transparent 70%);
+        filter: blur(50px);
+        animation: glow 6s ease-in-out infinite reverse;
+        pointer-events: none;
+    }
+
+    .package-background-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(rgba(137, 0, 176, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(137, 0, 176, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .package-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .package-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(137, 0, 176, 0.3);
+        border-radius: 30px;
+        padding: 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 40px rgba(137, 0, 176, 0.2);
+    }
+
+    .package-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+        box-shadow: 0 0 20px rgba(137, 0, 176, 0.6);
+    }
+
+    .package-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 20px rgba(137, 0, 176, 0.4);
+    }
+
+    .package-card h3 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-white);
+    }
+
+    .package-description {
+        color: var(--gray);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .package-includes {
+        list-style: none;
+        margin: 3rem 0;
+        text-align: left;
+    }
+
+    .package-includes li {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(137, 0, 176, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+        color: var(--text-white);
+    }
+
+    .package-includes li::before {
+        content: '✓';
+        color: var(--accent-light);
+        font-weight: 700;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        text-shadow: 0 0 10px rgba(137, 0, 176, 0.5);
+    }
+
+    .package-price {
+        margin: 3rem 0;
+    }
+
+    .price-amount {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--accent-light);
+        line-height: 1;
+        text-shadow: 0 0 30px rgba(137, 0, 176, 0.6);
+    }
+
+    .price-period {
+        color: var(--gray);
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    /* CTA Section */
+    .final-cta {
+        padding: 8rem 2rem;
+        background: var(--primary);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .final-cta::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(137, 0, 176, 0.2) 0%, transparent 70%);
+        filter: blur(80px);
+        animation: pulse-glow 8s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.5;
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    .final-cta > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .final-cta h2 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        color: var(--text-white);
+    }
+
+    .final-cta p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        max-width: 600px;
+        margin: 0 auto 3rem;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--dark-card);
+        color: var(--text-white);
+        padding: 3rem 2rem;
+        text-align: center;
+        border-top: 1px solid rgba(137, 0, 176, 0.2);
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-logo img {
+        filter: brightness(1.5) drop-shadow(0 0 10px rgba(137, 0, 176, 0.3));
+    }
+
+    .footer-text {
+        color: var(--gray);
+        font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+        .hero {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .hero-illustration {
+            order: -1;
+        }
+
+        .phone-mockup-placeholder {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .solution-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .package-card {
+            padding: 2rem;
+        }
+
+        .problems,
+        .solution,
+        .package,
+        .final-cta {
+            padding: 5rem 1.5rem;
+        }
+
+        .whatsapp-button {
+            width: 56px;
+            height: 56px;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 2.5rem);
+        }
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 64px;
+        height: 64px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: white;
+        text-decoration: none;
+        animation: whatsappPulse 2s ease-in-out infinite;
+    }
+
+    .whatsapp-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    @keyframes whatsappPulse {
+        0%, 100% {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1);
+        }
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<script>
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = anchor.getAttribute('href');
+                if (href) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe problem cards
+        document.querySelectorAll('.problem-card').forEach((card, index) => {
+            card.classList.add('fade-in-observer');
+            (card as HTMLElement).style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Observe solution section
+        document.querySelectorAll('.solution-text, .solution-visual').forEach((el, index) => {
+            el.classList.add('fade-in-observer');
+            (el as HTMLElement).style.transition = `all 0.8s ease-out ${index * 0.2}s`;
+            observer.observe(el);
+        });
+    });
+</script>
